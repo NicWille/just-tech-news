@@ -12,7 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 // turn on connection to db and server
-//change {force: false} to {force: true} to DROP TABLE IF EXISTS to re seed changes in models, start server and then change it back to false.
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
